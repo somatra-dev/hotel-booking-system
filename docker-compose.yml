@@ -1,0 +1,23 @@
+services:
+  hotel-db:
+    image: postgres:17
+    container_name: hotel-db
+    ports:
+      - "5255:5432"
+    environment:
+      POSTGRES_USER: hotel
+      POSTGRES_PASSWORD: hotel@168
+      POSTGRES_DB: hotel
+    networks:
+      - itp-net
+
+    volumes:
+      - hotel_data:/var/lib/postgresql/data
+
+volumes:
+  hotel_data:
+
+networks:
+  itp-net:
+    external: true
+    name: itp-net
