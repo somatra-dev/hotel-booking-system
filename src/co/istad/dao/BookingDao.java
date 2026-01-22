@@ -3,7 +3,6 @@ package co.istad.dao;
 import co.istad.domain.Booking;
 import co.istad.domain.BookingStatus;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 

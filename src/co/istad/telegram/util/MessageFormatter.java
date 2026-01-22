@@ -4,7 +4,9 @@ import co.istad.dto.response.BookingResponse;
 
 import java.util.List;
 
+
 public class MessageFormatter {
+    private MessageFormatter() {}
 
     public static String formatBookingList(List<BookingResponse> bookings) {
         StringBuilder sb = new StringBuilder();

@@ -1,13 +1,14 @@
 package co.istad.telegram.util;
 
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardRemove;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class KeyboardFactory {
+
+    private KeyboardFactory() {}
 
     public static ReplyKeyboardMarkup createRoomTypeKeyboard() {
         ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
@@ -46,9 +47,5 @@ public class KeyboardFactory {
 
         keyboardMarkup.setKeyboard(keyboard);
         return keyboardMarkup;
-    }
-
-    public static ReplyKeyboardRemove removeKeyboard() {
-        return new ReplyKeyboardRemove(true);
     }
 }

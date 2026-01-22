@@ -14,11 +14,6 @@ public class DataSourceConfig {
     }
     public static void init() {
         if (conn == null) {
-            try {
-                Class.forName("org.postgresql.Driver");
-            }catch (ClassNotFoundException e) {
-                System.out.println("Driver not found");
-            }
             String url = "jdbc:postgresql://localhost:5255/hotel";
             Properties info = new Properties();
             info.put("user", "hotel");

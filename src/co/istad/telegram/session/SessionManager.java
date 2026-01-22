@@ -44,20 +44,10 @@ public class SessionManager {
         sessions.remove(chatId);
     }
 
-    public void refreshSession(Long chatId) {
-        StaffSession session = sessions.get(chatId);
-        if (session != null) {
-            session.setLoginTime(LocalDateTime.now());
-        }
-    }
-
     private boolean isSessionExpired(StaffSession session) {
         return LocalDateTime.now().isAfter(
                 session.getLoginTime().plusHours(SESSION_TIMEOUT_HOURS)
         );
     }
 
-    public void cleanupExpiredSessions() {
-        sessions.entrySet().removeIf(entry -> isSessionExpired(entry.getValue()));
-    }
 }
